@@ -2,20 +2,14 @@
   <i class="fas fa-map-pin"></i><span class='ms-2'><%= @restaurant.address %></span>
 </p>
 <p class="fw-lighter opacity-75">
-  <% rand(2..5).times do %>
+  <% rand(1..3).times do %>
     <i class="fas fa-dollar-sign"></i>
   <% end %>
 </p>
 <p class="fw-lighter opacity-75">
   <i class="fas fa-utensils"></i><span class='ms-2'><%= @restaurant.category %></span>
 </p>
-<div class="d-flex justify-content-between align-items-center">
-    <h3>Reviews</h3>
-    <%= link_to new_restaurant_review_path(@restaurant), class: 'text-dark text-decoration-none' do %>
-      <i class="fa-solid fa-plus"></i>
-    <% end %>
-</div>
-
+<h3>Reviews</h3>
 <ul class="list-unstyled">
   <% @restaurant.reviews.each do |review| %>
     <li>
